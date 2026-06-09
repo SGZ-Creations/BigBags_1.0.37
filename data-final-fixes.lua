@@ -32,7 +32,7 @@ if my_running_speed_factor and my_running_speed_factor ~= 1 and data.raw.charact
 for _,dat in pairs(data.raw) do
 	for _,item in pairs(dat) do
 		if item.stack_size and type(item.stack_size) == "number" and item.stack_size > 1 then
-			item.stack_size = new_size( item.stack_size, my_stack_offset, my_stack_factor)
+			item.stack_size = new_size(item.stack_size, my_stack_offset, my_stack_factor)
 			if item.flags ~= nil and has_value(item.flags,"not-stackable") then
 				item.stack_size = 1
 			end

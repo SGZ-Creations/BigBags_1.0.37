@@ -7,16 +7,15 @@
 		-- item_pickup_distance = 1,
 		-- reach_resource_distance = 2.7,
 		-- loot_pickup_distance = 2,
-		
 ---------------------------------------------------------------------
 local func_techno
-		
+
 local function add_techno_level(name,n1,n,add_ingrs)
 	local techno = func_techno(n,n-n1)
-	
+
 	techno.type = "technology"
 	techno.upgrade = true
-	
+
 	if n > 1 then
 		techno.name = name .. "-" .. n
 		if n == 2 then
@@ -27,7 +26,7 @@ local function add_techno_level(name,n1,n,add_ingrs)
 	else
 		techno.name = name
 	end
-	
+
 	if add_ingrs ~= -1 then
 		if n+add_ingrs >= 1 then
 			table.insert(techno.unit.ingredients,{"automation-science-pack", 1})
@@ -45,7 +44,7 @@ local function add_techno_level(name,n1,n,add_ingrs)
 			table.insert(techno.unit.ingredients,{"utility-science-pack", 1})
 		end
 	end
-	
+
 	data:extend({techno})
 end
 
@@ -57,7 +56,6 @@ end
 
 ---------------------------------------------------------------------
 -- inventory
-
 func_techno = function(n,inc)
 	return {
 		icon = "__BigBags__/graphics/inventory.png",
@@ -82,10 +80,8 @@ end
 
 add_technos("inventory-size",1,5,0)
 
-
 ---------------------------------------------------------------------
 -- pickstick
-
 func_techno = function(n,inc)
 	return {
 		icon = "__BigBags__/graphics/pickstick.png",
@@ -131,7 +127,6 @@ add_technos("pickstick",1,5,0)
 
 ---------------------------------------------------------------------
 -- worker-robots-storage
-
 func_techno = function(n,inc)
 	return {
 		icon = "__base__/graphics/technology/worker-robots-storage.png",
@@ -161,7 +156,6 @@ add_technos("worker-robots-storage",4,10,-1)
 
 ---------------------------------------------------------------------
 -- worker-robots-speed
-
 func_techno = function(n,inc)
 	return {
 		icon = "__base__/graphics/technology/worker-robots-speed.png",
@@ -184,6 +178,4 @@ func_techno = function(n,inc)
 		order = "c-k-f-f"..n
 	}
 end
-
 -- add_technos("worker-robots-speed",6,8,-1)
-
