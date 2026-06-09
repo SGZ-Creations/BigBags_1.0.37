@@ -3,7 +3,8 @@ Version: 2.0.0
 Date: 07.06.26
   Bugfixes:
     - Fixed long standing incompatibilty with PY mods.
-  
+  Info:
+    - Fix By Sgamez(SGZ-Creations)
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.37
 Date: 22.11.2024
